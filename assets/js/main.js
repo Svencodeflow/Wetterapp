@@ -2,7 +2,7 @@
 //////Geo API
 // fetch("http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=5f1a23c9ded07f2769af1ee3b31ec13c")
 //     .then((response) => response.json())
-//     .then((data) => console.log(data));
+//     .then((geo) => console.log(geo));
 
 
 //////Data Api
