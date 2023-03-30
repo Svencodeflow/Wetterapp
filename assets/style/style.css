@@ -1,0 +1,50 @@
+h2 {
+    text-align: center;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+/*=====================
+  = Table Grid design =
+=======================*/
+
+#table {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-areas: 
+        "wind cloudiness pressure humidity sunrise sunset geo"
+        "windapi cloudapi pressapi humiapi sunriapi sunseapi geoapi"
+    ;
+    text-align: center;
+}
+
+.apiwind{
+    grid-area: windapi;
+}
+
+.cloudapi{
+    grid-area: cloudapi;
+}
+
+.pressapi{
+    grid-area: pressapi;
+}
+
+.humiapi{
+    grid-area: humiapi;
+}
+
+.sunriapi{
+    grid-area: sunriapi;
+}
+
+.sunseapi{
+    grid-area: sunseapi;
+}
+
+.geoapi{
+    grid-area: geoapi;
+}
