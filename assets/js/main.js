@@ -11,7 +11,7 @@ const iconline = document.querySelector('#icon-degree')
 let locationIcon = document.querySelector('.weather-icon')
 
 const wetterApp = () => {
-        fetch("https://api.openweathermap.org/data/2.5/weather?lat=51&lon=12&appid=5f1a23c9ded07f2769af1ee3b31ec13c")
+        fetch("https://api.openweathermap.org/data/2.5/weather?lat=51.65&lon=6.61&appid=5f1a23c9ded07f2769af1ee3b31ec13c")
         .then((response) => response.json())
         .then((data) => {
                 cityName.innerHTML = `Weather in ${data.name}, ${data.sys.country}`
@@ -50,7 +50,13 @@ const wetterApp = () => {
 wetterApp()
 
 
+const geo = () => {
+        fetch("http://api.openweathermap.org/geo/1.0/direct?q=Wesel&limit=1&appid=5f1a23c9ded07f2769af1ee3b31ec13c")
+        .then((response) => response.json())
+        .then((geo) => console.log(geo));
+}
 
+geo()
 
 /*=================== 
         Megan 
