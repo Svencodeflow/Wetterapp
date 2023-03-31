@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <div class="container">
     <section class="Megan">
 
         <h2 id="cityName"></h2>
@@ -19,7 +20,7 @@
             <input type="radio" name="temp" value="2" id="">Celcius
         </div>
         <div class="searchBar">
-            <input type="geo" name="geowetter" value="" id="geo" placeholder="Bitte wähle vorher eine Temparatur">
+            <input type="geo" name="geowetter" value="" id="geo" placeholder="Bitte gebe eine Stadt ein">
             <button type="button" onclick="searchCountry()">Suche</button>
         </div>
         <p id="icon-degree" class="weather-icon"></p>
@@ -29,11 +30,11 @@
         <div id="table">
             <p class="wind">Windgeschwindikeit</p>
             <p class="apiwind" id="apiwind"></p>
-            <p class="cloud">Trübung</p>
+            <p class="cloud">Wetterverhältnisse</p>
             <p class="cloudapi"></p>
             <p class="press">Luftdruck</p>
             <p class="pressapi"></p>
-            <p class="humi">Feuchtigkeit</p>
+            <p class="humi">Luftfeuchtigkeit</p>
             <p class="humiapi"></p>
             <p class="sunri">Sonnenaufgang</p>
             <p class="sunriapi"></p>
@@ -43,7 +44,7 @@
             <p class="geoapi"></p>
         </div>
     </section>
-
+    </div>
     <script src="./assets/js/main.js"></script>
 </body>
 
