@@ -11,13 +11,13 @@
 
 <body>
     <section class="Megan">
+
+        <h2 id="cityName"></h2>
         <Label>Wählen Sie eine Temparatureinheit aus</Label>
         <div class="changeTemp">
             <input type="radio" name="temp" value="1" id="">Fahrenheit
             <input type="radio" name="temp" value="2" id="">Celcius
-            <button onclick="searchCountry()">Start</button>
         </div>
-        <h2 id="cityName"></h2>
         <div class="searchBar">
             <input type="geo" name="geowetter" value="" id="geo" placeholder="Bitte wähle vorher eine Temparatur">
             <button type="button" onclick="searchCountry()">Suche</button>
@@ -29,17 +29,17 @@
         <div id="table">
             <p class="wind">Windgeschwindikeit</p>
             <p class="apiwind" id="apiwind"></p>
-            <p class="cloud">Cloudiness</p>
+            <p class="cloud">Trübung</p>
             <p class="cloudapi"></p>
-            <p class="press">Pressure</p>
+            <p class="press">Luftdruck</p>
             <p class="pressapi"></p>
-            <p class="humi">Humidity</p>
+            <p class="humi">Feuchtigkeit</p>
             <p class="humiapi"></p>
-            <p class="sunri">Sunrise</p>
+            <p class="sunri">Sonnenaufgang</p>
             <p class="sunriapi"></p>
-            <p class="sunse">Sunset</p>
+            <p class="sunse">Sonnenuntergang</p>
             <p class="sunseapi"></p>
-            <p class="geo">Geo coods</p>
+            <p class="geo">Koordinaten</p>
             <p class="geoapi"></p>
         </div>
     </section>
