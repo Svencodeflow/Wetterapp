@@ -11,10 +11,19 @@
 
 <body>
     <section class="Megan">
+        <Label>Ändere hier die Temperatur Einheit</Label>
+        <div class="changeTemp">
+            <input type="radio" name="temp" value="1" id="">Fahrenheit
+            <input type="radio" name="temp" value="2" id="">Celcius
+            <button onclick="searchCountry()">submit</button>
+        </div>
         <h2 id="cityName"></h2>
+        <div class="searchBar">
+            <input type="geo" name="geowetter" value="Stadt" id="geo">
+            <button type="button" onclick="searchCountry()">Suche</button>
+        </div>
         <p id="icon-degree" class="weather-icon"></p>
-        <input type="text" name="geowetter" value="Stadt">
-        <button type="button">Suche</button>
+
     </section>
     <section class="Sven">
         <div id="table">

@@ -1,27 +1,34 @@
 
-//////Geo API
-// fetch("http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=5f1a23c9ded07f2769af1ee3b31ec13c")
-//     .then((response) => response.json())
-//     .then((geo) => console.log(geo));
-
-
-//////Data Api
 const cityName = document.querySelector('#cityName');
 const iconline = document.querySelector('#icon-degree')
 let locationIcon = document.querySelector('.weather-icon')
+let val = document.querySelector("input[name='geowetter']")
 
-const wetterApp = () => {
-        fetch("https://api.openweathermap.org/data/2.5/weather?lat=51.65&lon=6.61&appid=5f1a23c9ded07f2769af1ee3b31ec13c")
+
+const wetterApp = (num1, num2, name) => {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${num1}&lon=${num2}&appid=5f1a23c9ded07f2769af1ee3b31ec13c`)
         .then((response) => response.json())
         .then((data) => {
-                cityName.innerHTML = `Weather in ${data.name}, ${data.sys.country}`
-                console.log((data));
+                cityName.innerHTML = `Weather in ${name}, ${data.sys.country}`
+                // console.log((data));
 
-                //Umrechnung von Kelvin zu Celsius
-                let temp = Number(data.main.temp - 273.15).toFixed(1);
-                
+                // Change Temp Function
+                let valTemp = document.querySelector("input[name='temp']:checked")
+                let tempcel = Number(data.main.temp - 273.15).toFixed(1)+ "° Celcius";
+                let tempfahr = Number((data.main.temp - 273.15) * 9/5 + 32).toFixed(1)+ "° Fahrenheit"
+                let tempi;
+        
+                // console.log(valTemp.value);
+                if (valTemp.value == 1) {
+                        tempi = tempfahr
+                } else {
+                        tempi = tempcel
+                }
+
+                //New Date
                 let date = new Date()
                 
+                //Icon für Wetter Anzeige
                 let icon = data.weather[0].icon
                 locationIcon = `<img src="./assets/img/${icon}.png" />`;
 
@@ -33,8 +40,8 @@ const wetterApp = () => {
                 const suns = data.sys.sunset
                 const sunse = new Date(suns * 1000).toLocaleTimeString().slice(0, 5)
 
-                console.log(data.wind.speed);
-                iconline.innerHTML = `${locationIcon} ${temp}° Celsius <br> ${data.weather[0].description} <br>${date.toLocaleString()}`;
+                //Document innerHTML
+                iconline.innerHTML = `${locationIcon} ${tempi}<br> ${data.weather[0].description} <br>${date.toLocaleString()}`;
                 document.querySelector(".apiwind").innerHTML = `${data.wind.speed} m/s`;
                 document.querySelector(".cloudapi").innerHTML = `${data.weather[0].description}`;
                 document.querySelector(".pressapi").innerHTML = `${data.main.pressure} hpa`;
@@ -42,34 +49,35 @@ const wetterApp = () => {
                 document.querySelector(".sunriapi").innerHTML = `${sunris}`;
                 document.querySelector(".sunseapi").innerHTML = `${sunse}`;
                 document.querySelector(".geoapi").innerHTML = `[${data.coord.lat}, ${data.coord.lon}]`;
-                console.log(data.weather[0].icon);
         });
         
 }
 
-wetterApp()
 
 
-const geo = () => {
-        fetch("http://api.openweathermap.org/geo/1.0/direct?q=Wesel&limit=1&appid=5f1a23c9ded07f2769af1ee3b31ec13c")
+const geo = (country) => {
+        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${country}&limit=1&appid=5f1a23c9ded07f2769af1ee3b31ec13c`)
         .then((response) => response.json())
-        .then((geo) => console.log(geo));
+        .then((geo) => {
+                let num3 = Number(geo[0].lat).toFixed(3);
+                let num4 = Number(geo[0].lon).toFixed(3);
+                let name3 = geo[0].name
+                // console.log(geo);
+                // console.log(num3);
+                // console.log(num4);
+                wetterApp(num3, num4, name3)
+        });
 }
 
-geo()
 
-/*=================== 
-        Megan 
-=====================*/
-// Hello again
+function searchCountry() {
+        let val = document.getElementById("geo")
 
-/*=================== 
-        Kevin 
-=====================*/
+        let input = val.value
+        geo(input)
+}
 
 
-/*=================== 
-        Sven 
-=====================*/
 
-//helllo aigain in the irgendwas 
+
+
