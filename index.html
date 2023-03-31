@@ -11,15 +11,15 @@
 
 <body>
     <section class="Megan">
-        <Label>Ändere hier die Temperatur Einheit</Label>
+        <Label>Wählen Sie eine Temparatureinheit aus</Label>
         <div class="changeTemp">
             <input type="radio" name="temp" value="1" id="">Fahrenheit
             <input type="radio" name="temp" value="2" id="">Celcius
-            <button onclick="searchCountry()">submit</button>
+            <button onclick="searchCountry()">Start</button>
         </div>
         <h2 id="cityName"></h2>
         <div class="searchBar">
-            <input type="geo" name="geowetter" value="Stadt" id="geo">
+            <input type="geo" name="geowetter" value="" id="geo" placeholder="Bitte wähle vorher eine Temparatur">
             <button type="button" onclick="searchCountry()">Suche</button>
         </div>
         <p id="icon-degree" class="weather-icon"></p>
@@ -43,8 +43,7 @@
             <p class="geoapi"></p>
         </div>
     </section>
-    <section class="Kevin">
-    </section>
+
     <script src="./assets/js/main.js"></script>
 </body>
 

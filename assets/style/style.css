@@ -10,8 +10,9 @@
 }
 
 html {
+    background-color: lightslategray;
     font-family: 'mavenpro';
-    font-size: 12px;
+    font-size: 1rem;
 
 }
 
@@ -28,16 +29,33 @@ html {
     Header
 =======================*/
 
-h2, .weather-icon {
+h2,
+.weather-icon {
     text-align: center;
     line-height: 2;
     margin-bottom: 15px;
+}
+
+p {
+    font-weight: bold;
 }
 
 img {
     width: 40px;
     height: 40px;
 }
+
+.Megan,
+.Sven {
+    background-color: lightblue;
+    text-align: center;
+    margin-top: 3rem;
+    border: solid;
+    border-width: 5px;
+    border-color: cadetblue;
+
+}
+
 
 
 
